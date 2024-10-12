@@ -1,6 +1,7 @@
 import streamlit as st
 import tensorflow as tf
-import cv2
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import numpy as np
 
 # Cargar el modelo TFLite
@@ -17,6 +18,7 @@ class_names = ['burj_khalifa', 'chichen_itza', 'christ the reedemer', 'eiffel_to
 # Preprocesar la imagen subida
 def preprocess_image(image):
     size = (150, 150)
+    image = np.array(image)
     image = cv2.resize(image, size)
     img_array = image / 255.0  # Normalizar la imagen
     img_array = np.expand_dims(img_array, axis=0)
@@ -29,9 +31,8 @@ st.write("Simply upload a picture, and our advanced AI model will tell you if it
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
 if uploaded_file is not None:
-    # Leer la imagen usando OpenCV
-    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    image = cv2.imdecode(file_bytes, 1)
+    # Leer la imagen usando Matplotlib
+    image = mpimg.imread(uploaded_file)
     st.image(image, caption='Uploaded Image.', use_column_width=True)
     st.write("")
     st.write("Classifying...")
