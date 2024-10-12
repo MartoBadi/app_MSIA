@@ -19,7 +19,7 @@ class_names = ['burj_khalifa', 'chichen_itza', 'christ the reedemer', 'eiffel_to
 def preprocess_image(image):
     size = (150, 150)
     image = np.array(image)
-    image = cv2.resize(image, size)
+    image = np.array(Image.fromarray(image).resize(size))  # Redimensionar la imagen
     img_array = image / 255.0  # Normalizar la imagen
     img_array = np.expand_dims(img_array, axis=0)
     return img_array
@@ -28,7 +28,7 @@ st.title("Image Classification with CNN - Made with love by Hardik")
 st.write("Simply upload a picture, and our advanced AI model will tell you if it's a building, forest, glacier, mountain, sea, or street.")
 
 # Subir archivo
-uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
     # Leer la imagen usando Matplotlib
@@ -48,3 +48,5 @@ if uploaded_file is not None:
     # Obtener la clase con mayor probabilidad
     predicted_class = class_names[np.argmax(predictions)]
     st.write(f"Prediction: {predicted_class}")
+    
+  
