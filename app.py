@@ -19,7 +19,7 @@ class_names = ['burj_khalifa', 'chichen_itza', 'christ the reedemer', 'eiffel_to
 def preprocess_image(image):
     size = (150, 150)
     image = np.array(image)
-    image = np.array(Image.fromarray(image).resize(size))  # Redimensionar la imagen
+    image = np.resize(image, (size[0], size[1], 3))  # Redimensionar la imagen
     img_array = image / 255.0  # Normalizar la imagen
     img_array = np.expand_dims(img_array, axis=0)
     return img_array
@@ -48,5 +48,4 @@ if uploaded_file is not None:
     # Obtener la clase con mayor probabilidad
     predicted_class = class_names[np.argmax(predictions)]
     st.write(f"Prediction: {predicted_class}")
-    
   
