@@ -22,6 +22,7 @@ def preprocess_image(image):
     image = np.resize(image, (size[0], size[1], 3))  # Redimensionar la imagen
     img_array = image / 255.0  # Normalizar la imagen
     img_array = np.expand_dims(img_array, axis=0)
+    img_array = img_array.astype(np.float32)  # Asegurarse de que la imagen sea de tipo FLOAT32
     return img_array
 
 st.title("Image Classification with CNN - Made with love by Hardik")
