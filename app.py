@@ -22,11 +22,10 @@ def preprocess_image(image):
     image = np.resize(image, (size[0], size[1], 3))  # Redimensionar la imagen
     img_array = image / 255.0  # Normalizar la imagen
     img_array = np.expand_dims(img_array, axis=0)
-    img_array = img_array.astype(np.float32)  # Asegurarse de que la imagen sea de tipo FLOAT32
     return img_array
 
-st.title("Image Classification with CNN - Made with love by Hardik")
-st.write("Simply upload a picture, and our advanced AI model will tell you if it's a building, forest, glacier, mountain, sea, or street.")
+st.title("Clasificación de imágenes de maravillas del mundo")
+st.write("Este sitio web fue creado para la materia Modelizado de Sistemas de IA de la carrera Desarrollo de Sistemas de IA del IFTS 18. La idea es que subas una imagen de uno de las siguientes maravillas del mundo: burj_khalifa, chichen_itza, christ the reedemer, eiffel_tower, great_wall_of_china, machu_pichu, pyramids_of_giza, roman_colosseum, statue_of_liberty, stonehenge, taj_mahal, venezuela_angel_falls y el modelo te dirá qué maravilla aparece en la imagen. ¡Diviértete!")
 
 # Subir archivo
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
