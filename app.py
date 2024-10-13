@@ -17,7 +17,7 @@ class_names = ['burj_khalifa', 'chichen_itza', 'christ the reedemer', 'eiffel_to
 
 # Preprocesar la imagen subida
 def preprocess_image(image):
-    image = image.resize((150, 150))
+    image = np.resize((150, 150))
     image = np.array(image)
     img_array = image / 255.0  # Normalizar la imagen
     img_array = np.expand_dims(img_array, axis=0)
