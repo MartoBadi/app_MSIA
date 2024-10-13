@@ -1,7 +1,6 @@
 import streamlit as st
 import tensorflow as tf
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+import matplotlib as plt
 import numpy as np
 
 # Cargar el modelo TFLite
