@@ -5,7 +5,7 @@ import matplotlib.image as mpimg
 import numpy as np
 
 # Cargar el modelo TFLite
-interpreter = tf.lite.Interpreter(model_path='model.tflite')
+interpreter = tf.lite.Interpreter(model_path='modelandrea.tflite')
 interpreter.allocate_tensors()
 
 # Obtener detalles de entrada y salida
@@ -13,7 +13,7 @@ input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
 # Definir nombres de clases
-class_names = ['burj_khalifa', 'chichen_itza', 'christ the reedemer', 'eiffel_tower', 'great_wall_of_china', 'machu_pichu', 'pyramids_of_giza', 'roman_colosseum', 'statue_of_liberty', 'stonehenge', 'taj_mahal', 'venezuela_angel_falls']
+class_names = ['burj_khalifa', 'chichen_itza', 'christ the reedemer', 'Eiffel Tower', 'great_wall_of_china', 'machu_pichu', 'pyramids_of_giza', 'roman_colosseum', 'statue_of_liberty', 'stonehenge', 'taj_mahal', 'venezuela_angel_falls']
 
 # Preprocesar la imagen subida
 def preprocess_image(image):
