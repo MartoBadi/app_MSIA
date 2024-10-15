@@ -6,7 +6,7 @@ import numpy as np
 import os
 
 # Cargar el modelo TFLite
-interpreter = tf.lite.Interpreter(model_path='model.tflite')
+interpreter = tf.lite.Interpreter(model_path='modelLautaro.tflite')
 interpreter.allocate_tensors()
 
 # Obtener detalles de entrada y salida
@@ -56,7 +56,7 @@ def evaluate_test_set(test_dir):
     return accuracy
 
 # Directorio del conjunto de prueba
-test_dir = '/test'
+test_dir = './Wonders of World/test'
 
 # Evaluar el conjunto de prueba
 accuracy = evaluate_test_set(test_dir)
