@@ -5,7 +5,7 @@ import matplotlib.image as mpimg
 import numpy as np
 
 # Cargar el modelo TFLite
-interpreter = tf.lite.Interpreter(model_path='modelandrea.tflite')
+interpreter = tf.lite.Interpreter(model_path='model.tflite')
 interpreter.allocate_tensors()
 
 # Obtener detalles de entrada y salida
