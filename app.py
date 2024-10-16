@@ -12,9 +12,9 @@ input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
 # Definir nombres de clases
-class_names = ['burj_khalifa', 'chichen_itza', 'cristo_redentor', 'torre_eiffel',
-               'gran_muralla_china', 'machu_picchu', 'pirámides_de_giza', 'coliseo_romano',
-               'estatua_de_la_libertad', 'stonehenge', 'taj_mahal', 'salto_ángel']
+class_names = ['Burj Khalifa', 'Chichen Itza', 'Cristo redentor', 'Torre Eiffel',
+               'Gran muralla china', 'Machu Picchu', 'Pirámides de Giza', 'Colise romano',
+               'Estatua de la libertad', 'Stonehenge', 'Taj Mahal', 'Salto Ángel']
 
 # Definir umbral de confianza (por ejemplo, 80%)
 confidence_threshold = 0.7
