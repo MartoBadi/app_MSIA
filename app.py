@@ -17,7 +17,7 @@ class_names = ['burj_khalifa', 'chichen_itza', 'christ the reedemer', 'eiffel_to
                'statue_of_liberty', 'stonehenge', 'taj_mahal', 'venezuela_angel_falls']
 
 # Definir umbral de confianza (por ejemplo, 80%)
-confidence_threshold = 0.8
+confidence_threshold = 0.7
 
 # Preprocesar la imagen subida
 def preprocess_image(image):
@@ -59,6 +59,6 @@ predicted_class = class_names[np.argmax(predictions)]
 
 # Verificar si la probabilidad supera el umbral de confianza
 if max_probabilidad < confidence_threshold:
-    st.write("No se puede determinar la clase con suficiente confianza.")
+    st.write("No se pudo clasificar la imagen.")
 else:
     st.write(f"Prediction: {predicted_class} con una probabilidad de {max_probabilidad:.2f}")
