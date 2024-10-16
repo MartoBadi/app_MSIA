@@ -59,6 +59,6 @@ predicted_class = class_names[np.argmax(predictions)]
 
 # Verificar si la probabilidad supera el umbral de confianza
 if max_probabilidad < confidence_threshold:
-    st.write("No se pudo clasificar la imagen.")
+    st.write("No se pudo clasificar la imagen")
 else:
     st.write(f"Prediction: {predicted_class} con una probabilidad de {max_probabilidad:.2f}")
