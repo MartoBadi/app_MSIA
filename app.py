@@ -17,7 +17,7 @@ class_names = ['burj_khalifa', 'chichen_itza', 'christ the reedemer', 'eiffel_to
                'statue_of_liberty', 'stonehenge', 'taj_mahal', 'venezuela_angel_falls']
 
 # Definir umbral de confianza (por ejemplo, 80%)
-confidence_threshold = 0.8
+confidence_threshold = 0.7
 
 # Preprocesar la imagen subida
 def preprocess_image(image):
