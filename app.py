@@ -18,7 +18,7 @@ class_names = ['burj_khalifa', 'chichen_itza', 'christ the reedemer', 'eiffel_to
 
 # Preprocesar la imagen subida
 def preprocess_image(image):
-    size = (150, 150)  # Tamaño esperado por el modelo
+    size = (224, 224)  # Tamaño esperado por el modelo
     image = image.resize(size)  # Usar PIL para redimensionar
     img_array = np.array(image)  # Convertir la imagen a un array NumPy
     img_array = img_array / 255.0  # Normalizar la imagen
