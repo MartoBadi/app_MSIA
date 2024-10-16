@@ -54,11 +54,11 @@ if uploaded_file is not None:
     #predicted_class = class_names[np.argmax(predictions)]
     #st.write(f"Prediction: {predicted_class}")
 
-max_probabilidad = np.max(predictions)
-predicted_class = class_names[np.argmax(predictions)]
+    max_probabilidad = np.max(predictions)
+    predicted_class = class_names[np.argmax(predictions)]
 
-# Verificar si la probabilidad supera el umbral de confianza
-if max_probabilidad < confidence_threshold:
-    st.write("No se pudo clasificar la imagen")
-else:
-    st.write(f"Prediction: {predicted_class} con una probabilidad de {max_probabilidad:.2f}")
+    # Verificar si la probabilidad supera el umbral de confianza
+    if max_probabilidad < confidence_threshold:
+        st.write("No se pudo clasificar la imagen")
+    else:
+        st.write(f"Prediction: {predicted_class} con una probabilidad de {max_probabilidad:.2f}")
