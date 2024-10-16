@@ -16,6 +16,9 @@ class_names = ['burj_khalifa', 'chichen_itza', 'christ the reedemer', 'eiffel_to
                'great_wall_of_china', 'machu_pichu', 'pyramids_of_giza', 'roman_colosseum',
                'statue_of_liberty', 'stonehenge', 'taj_mahal', 'venezuela_angel_falls']
 
+# Definir umbral de confianza (por ejemplo, 80%)
+confidence_threshold = 0.8
+
 # Preprocesar la imagen subida
 def preprocess_image(image):
     size = (224, 224)  # Tamaño esperado por el modelo
@@ -48,5 +51,14 @@ if uploaded_file is not None:
     predictions = interpreter.get_tensor(output_details[0]['index'])
     
     # Obtener la clase con mayor probabilidad
-    predicted_class = class_names[np.argmax(predictions)]
-    st.write(f"Prediction: {predicted_class}")
+    #predicted_class = class_names[np.argmax(predictions)]
+    #st.write(f"Prediction: {predicted_class}")
+
+max_probabilidad = np.max(predictions)
+predicted_class = class_names[np.argmax(predictions)]
+
+# Verificar si la probabilidad supera el umbral de confianza
+if max_probabilidad < confidence_threshold:
+    st.write("No se puede determinar la clase con suficiente confianza.")
+else:
+    st.write(f"Prediction: {predicted_class} con una probabilidad de {max_probabilidad:.2f}")
