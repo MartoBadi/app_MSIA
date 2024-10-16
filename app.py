@@ -59,6 +59,6 @@ if uploaded_file is not None:
 
     # Verificar si la probabilidad supera el umbral de confianza
     if max_probabilidad < confidence_threshold:
-        st.write("No se pudo clasificar la imagen")
+        st.write(f"No se pudo clasificar la imagen. La probabilidad maxima fue de {max_probabilidad:.2f}")
     else:
         st.write(f"Prediction: {predicted_class} con una probabilidad de {max_probabilidad:.2f}")
