@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 
 # Cargar el modelo TFLite
-interpreter = tf.lite.Interpreter(model_path='modelLautaro.tflite')
+interpreter = tf.lite.Interpreter(model_path='modelNella.tflite')
 interpreter.allocate_tensors()
 
 # Obtener detalles de entrada y salida
