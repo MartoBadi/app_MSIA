@@ -31,7 +31,7 @@ def preprocess_image(image):
 
 # Título de la aplicación
 st.title("Clasificación de imágenes de maravillas del mundo")
-st.write("Sube una imagen de una de las maravillas del mundo y el modelo la clasificará.")
+st.markdown("Sube una imagen de una de las maravillas del mundo y el modelo la clasificará. [Ir a Google](https://www.google.com)")
 
 # Subir archivo
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
